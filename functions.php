@@ -54,12 +54,12 @@ function child_theme_setup() {
 	// Setup Shortcodes
 	include_once( CHILD_DIR . '/lib/functions/shortcodes.php');
 	
+	// Setup Widgets
+	//include_once( CHILD_DIR . '/lib/widgets/widget-social.php');
+	
 	// ** Frontend **		
 	// Remove Edit link
 	add_filter( 'edit_post_link', '__return_false' );
-
-	// Remove Breadcrumbs
-	remove_action('genesis_before_loop', 'genesis_do_breadcrumbs');
 }
 
 // ** Backend Functions ** //
