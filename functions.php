@@ -18,7 +18,7 @@
  *
  */
 
-add_action('genesis_setup','child_theme_setup');
+add_action('genesis_setup','child_theme_setup', 15);
 function child_theme_setup() {
 	
 	// ** Backend **
