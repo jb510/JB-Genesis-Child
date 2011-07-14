@@ -12,6 +12,6 @@ Helpful links: <a href="http://www.billerickson.net/get-genesis" target="_blank"
 
 <strong>Posts.</strong> To edit the posts in your blog, go to the Posts section. <a href="http://en.support.wordpress.com/posts/">More information on Posts.</a>
 
-
+<strong>Sidebar.</strong> Customize the sidebar widgets from Appearance > Widgets. <a href="http://en.support.wordpress.com/widgets/">More information on Sidebars.</a>
 
 </div>
