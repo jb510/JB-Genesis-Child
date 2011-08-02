@@ -57,6 +57,9 @@ function child_theme_setup() {
 	// Setup Widgets
 	//include_once( CHILD_DIR . '/lib/widgets/widget-social.php');
 	
+	// Setup Theme Settings
+	//include_once( CHILD_DIR . '/lib/functions/admin.php');
+	
 	// Don't update theme
 	add_filter( 'http_request_args', 'be_dont_update_theme', 5, 2 );
 		
