@@ -1,8 +1,9 @@
 <?php
 /**
- * Social Settings
+ * Theme Settings
  *
- * This file registers the Social settings to the Theme Settings, to be used in the nav bar.
+ * This file registers all of this child theme's specific Theme Settings, accessible from
+ * Genesis > Theme Settings.
  *
  * @package		BE Genesis Child
  * @author		Bill Erickson <bill@billerickson.net>
