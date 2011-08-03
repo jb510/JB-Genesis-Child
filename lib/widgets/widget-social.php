@@ -62,7 +62,10 @@ class BE_Social_Widget extends WP_Widget {
      * @return void Echoes it's output
      **/
 	function form( $instance ) {
-		?>		
+	
+		$defaults = array( 'be_facebook' => '', 'be_twitter' => '', 'be_youtube' => '' );
+		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
+
 		<p><label for="<?php echo $this->get_field_id( 'be_facebook' ); ?>">Facebook URL: <input class="widefat" id="<?php echo $this->get_field_id( 'be_facebook' ); ?>" name="<?php echo $this->get_field_name( 'be_facebook' ); ?>" value="<?php echo $instance['be_facebook']; ?>" /></label></p>
 
 		<p><label for="<?php echo $this->get_field_id( 'be_twitter' ); ?>">Twitter URL: <input class="widefat" id="<?php echo $this->get_field_id( 'be_twitter' ); ?>" name="<?php echo $this->get_field_name( 'be_twitter' ); ?>" value="<?php echo $instance['be_twitter']; ?>" /></label></p>
