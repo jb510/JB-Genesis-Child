@@ -93,8 +93,8 @@ function be_remove_menus () {
 /**
  * Customize Menu Order
  *
- * @param $menu_ord. Current order.
- * @return $menu_ord. New order.
+ * @param array $menu_ord. Current order.
+ * @return array $menu_ord. New order.
  *
  */
 
