@@ -36,7 +36,8 @@ function child_theme_setup() {
 	//add_action( 'init', 'be_create_my_taxonomies' );
 
 	// Set up Meta Boxes
-	//add_action( 'init' , 'be_create_metaboxes' );
+	//add_filter( 'cmb_meta_boxes' , 'be_create_metaboxes' );
+	//add_action( 'init', 'be_initialize_cmb_meta_boxes', 9999 );
 
 	// Setup Sidebars
 	//unregister_sidebar('sidebar-alt');
@@ -187,17 +188,14 @@ function be_create_my_taxonomies() {
  *
  */
 
-function be_create_metaboxes() {
-	$prefix = 'be_';
-	$meta_boxes = array();
-
+function be_create_metaboxes( $meta_boxes ) {
 	$meta_boxes[] = array(
     	'id' => 'rotator-options',
 	    'title' => 'Rotator Options',
-	    'pages' => array('rotator'), // post type
+	    'pages' => array('rotator'), 
 		'context' => 'normal',
 		'priority' => 'low',
-		'show_names' => true, // Show field names left of input
+		'show_names' => true, 
 		'fields' => array(
 			array(
 				'name' => 'Instructions',
@@ -218,9 +216,22 @@ function be_create_metaboxes() {
 			),
 		),
 	);
- 	
- 	require_once(CHILD_DIR . '/lib/metabox/init.php'); 
+	
+	return $meta_boxes;
+ }
+ 
+/**
+ * Initialize Metabox Class
+ * see /lib/metabox/example-functions.php for more information
+ *
+ */
+  
+function be_initialize_cmb_meta_boxes() {
+    if ( !class_exists( 'cmb_Meta_Box' ) ) {
+        require_once( CHILD_DIR . '/lib/metabox/init.php' );
+    }
 }
+
 
 
 /**
