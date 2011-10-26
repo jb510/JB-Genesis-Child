@@ -21,19 +21,12 @@
 add_action('genesis_setup','child_theme_setup', 15);
 function child_theme_setup() {
 	
-	// ** Backend **
+	// ** Backend **	
 	
-	// Set up Post Types
-	//add_action( 'init', 'be_create_my_post_types' );	
+	// Image Sizes
+	// add_image_size ('be_featured', 400, 100, true );
 	
-	// Set up Taxonomies
-	//add_action( 'init', 'be_create_my_taxonomies' );
-
-	// Set up Meta Boxes
-	//add_filter( 'cmb_meta_boxes' , 'be_create_metaboxes' );
-	//add_action( 'init', 'be_initialize_cmb_meta_boxes', 9999 );
-
-	// Setup Sidebars
+	// Sidebars
 	//unregister_sidebar('sidebar-alt');
 	//genesis_register_sidebar(array('name' => 'Blog Sidebar', 'id' => 'blog-sidebar'));
 	//add_theme_support( 'genesis-footer-widgets', 3 );
@@ -46,9 +39,6 @@ function child_theme_setup() {
 	//genesis_unregister_layout( 'sidebar-sidebar-content' );
 	//genesis_unregister_layout( 'sidebar-content-sidebar' );
 		
-	// Setup Widgets
-	//include_once( CHILD_DIR . '/lib/widgets/widget-social.php');
-	
 	// Setup Theme Settings
 	//include_once( CHILD_DIR . '/lib/functions/admin.php');
 	
@@ -56,136 +46,12 @@ function child_theme_setup() {
 	add_filter( 'http_request_args', 'be_dont_update_theme', 5, 2 );
 		
 	// ** Frontend **		
+	
 	// Remove Edit link
 	add_filter( 'edit_post_link', '__return_false' );
 }
 
 // ** Backend Functions ** //
-
-
-/**
- * Create Post Types
- *
- * @link http://codex.wordpress.org/Function_Reference/register_post_type
- *
- */
-
-function be_create_my_post_types() {
-	$labels = array(
-		'name' => 'Rotator Items',
-		'singular_name' => 'Rotator Item',
-		'add_new' => 'Add New',
-		'add_new_item' => 'Add New Rotator Item',
-		'edit_item' => 'Edit Rotator Item',
-		'new_item' => 'New Rotator Item',
-		'view_item' => 'View Rotator Item',
-		'search_items' => 'Search Rotator Items',
-		'not_found' =>  'No rotator items found',
-		'not_found_in_trash' => 'No rotator items found in trash',
-		'parent_item_colon' => '',
-		'menu_name' => 'Rotator'
-	);
-	
-	$args = array(
-		'labels' => $labels,
-		'public' => true,
-		'publicly_queryable' => true,
-		'show_ui' => true, 
-		'show_in_menu' => true, 
-		'query_var' => true,
-		'rewrite' => true,
-		'capability_type' => 'post',
-		'has_archive' => false, 
-		'hierarchical' => false,
-		'menu_position' => null,
-		'supports' => array('title','thumbnail','excerpt')
-	); 
-
-	register_post_type( 'rotator', $args );
-}
-
-/**
- * Create Taxonomies
- *
- * @link http://codex.wordpress.org/Function_Reference/register_taxonomy
- *
- */
-
-function be_create_my_taxonomies() {
-	$labels = array(
-		'name' => 'Locations',
-		'singular_name' => 'Location',
-		'search_items' =>  'Search Locations',
-		'all_items' => 'All Locations',
-		'parent_item' => 'Parent Location',
-		'parent_item_colon' => 'Parent Location:',
-		'edit_item' => 'Edit Location',
-		'update_item' => 'Update Location',
-		'add_new_item' => 'Add New Location',
-		'new_item_name' => 'New Location Name',
-		'menu_name' => 'Location'
-	); 	
-
-	register_taxonomy( 'rotator-location', array('rotator'), array(
-		'hierarchical' => true,
-		'labels' => $labels,
-		'show_ui' => true,
-		'query_var' => true,
-		'rewrite' => array( 'slug' => 'rotator-location' ),
-	));}
-
-/**
- * Create Metaboxes
- *
- * @link http://www.billerickson.net/wordpress-metaboxes/
- *
- */
-
-function be_create_metaboxes( $meta_boxes ) {
-	$meta_boxes[] = array(
-    	'id' => 'rotator-options',
-	    'title' => 'Rotator Options',
-	    'pages' => array('rotator'), 
-		'context' => 'normal',
-		'priority' => 'low',
-		'show_names' => true, 
-		'fields' => array(
-			array(
-				'name' => 'Instructions',
-				'desc' => 'In the right column upload a featured image. Make sure this image is at least 900x360px wide. Then fill out the information below.',
-				'type' => 'title',
-			),
-			array(
-		        'name' => 'Display Info',
-		        'desc' => 'Show Title and Excerpt from above',
-	    	    'id' => 'show_info',
-	        	'type' => 'checkbox'
-			),
-			array(
-				'name' => 'Clickthrough URL', 
-	            'desc' => 'Where the Learn More button goes',
-            	'id' => 'url',
-            	'type' => 'text'
-			),
-		),
-	);
-	
-	return $meta_boxes;
- }
- 
-/**
- * Initialize Metabox Class
- * see /lib/metabox/example-functions.php for more information
- *
- */
-  
-function be_initialize_cmb_meta_boxes() {
-    if ( !class_exists( 'cmb_Meta_Box' ) ) {
-        require_once( CHILD_DIR . '/lib/metabox/init.php' );
-    }
-}
-
-
 
 /**
  * Don't Update Theme
@@ -207,6 +73,3 @@ function be_dont_update_theme( $r, $url ) {
 }
 
 // ** Frontend Functions ** //
-
-
-// ** Helper Functions ** //
