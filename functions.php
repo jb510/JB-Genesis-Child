@@ -22,12 +22,6 @@ add_action('genesis_setup','child_theme_setup', 15);
 function child_theme_setup() {
 	
 	// ** Backend **
-	// Remove Unused Menu Items
-	add_action('admin_menu', 'be_remove_menus');
-	
-	// Customize Menu Order
-	add_filter( 'custom_menu_order', 'be_custom_menu_order' );
-	add_filter( 'menu_order', 'be_custom_menu_order' );
 	
 	// Set up Post Types
 	//add_action( 'init', 'be_create_my_post_types' );	
@@ -68,44 +62,6 @@ function child_theme_setup() {
 
 // ** Backend Functions ** //
 
-/**
- * Remove Menu Items
- *
- * Remove unused menu items by adding them to the array.
- * See the commented list of menu items for reference.
- *
- */
-
-function be_remove_menus () {
-	global $menu;
-	$restricted = array(__('Links'));
-	// Example:
-	//$restricted = array(__('Dashboard'), __('Posts'), __('Media'), __('Links'), __('Pages'), __('Appearance'), __('Tools'), __('Users'), __('Settings'), __('Comments'), __('Plugins'));
-	end ($menu);
-	while (prev($menu)){
-		$value = explode(' ',$menu[key($menu)][0]);
-		if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){unset($menu[key($menu)]);}
-	}
-}
-
-/**
- * Customize Menu Order
- *
- * @param array $menu_ord. Current order.
- * @return array $menu_ord. New order.
- *
- */
-
-function be_custom_menu_order( $menu_ord ) {
-	if ( !$menu_ord ) return true;
-	return array(
-		'index.php', // this represents the dashboard link
-		'edit.php?post_type=page', //the page tab
-		'edit.php', //the posts tab
-		'edit-comments.php', // the comments tab
-		'upload.php', // the media manager
-    );
-}
 
 /**
  * Create Post Types
