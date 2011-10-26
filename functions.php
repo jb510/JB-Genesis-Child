@@ -58,8 +58,12 @@ function child_theme_setup() {
  * If there is a theme in the repo with the same name, 
  * this prevents WP from prompting an update.
  *
+ * @author Mark Jaquith
  * @link http://markjaquith.wordpress.com/2009/12/14/excluding-your-plugin-or-theme-from-update-checks/
  *
+ * @param array $r, request arguments
+ * @param string $url, request url
+ * @return array request arguments
  */
 
 function be_dont_update_theme( $r, $url ) {
