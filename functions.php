@@ -52,9 +52,6 @@ function child_theme_setup() {
 	//genesis_unregister_layout( 'sidebar-sidebar-content' );
 	//genesis_unregister_layout( 'sidebar-content-sidebar' );
 		
-	// Setup Shortcodes
-	include_once( CHILD_DIR . '/lib/functions/shortcodes.php');
-	
 	// Setup Widgets
 	//include_once( CHILD_DIR . '/lib/widgets/widget-social.php');
 	
