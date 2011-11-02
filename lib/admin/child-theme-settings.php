@@ -18,14 +18,15 @@
  *
  * @package BE Genesis Child
  * @subpackage Admin
- * @since 1.0
+ *
+ * @since 1.0.0
  */
 class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	
 	/**
 	 * Create an admin menu item and settings page.
 	 * 
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function __construct() {
 		
@@ -73,7 +74,7 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	 *
 	 * See /lib/classes/sanitization.php for all available filters.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */	
 	function sanitization_filters() {
 		
@@ -87,7 +88,8 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	/**
 	 * Register metaboxes on Child Theme Settings page
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
+	 *
 	 * @see Child_Theme_Settings::contact_information() Callback for contact information
 	 */
 	function metaboxes() {
@@ -99,7 +101,8 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	/**
 	 * Callback for Contact Information metabox
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
+	 *
 	 * @see Child_Theme_Settings::metaboxes()
 	 */
 	function contact_information() {
