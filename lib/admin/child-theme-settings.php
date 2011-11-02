@@ -66,10 +66,7 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 
 		// Initialize the Sanitization Filter
 		add_action( 'genesis_settings_sanitizer_init', array( $this, 'sanitization_filters' ) );
-		
-		// Add the Admin Page
-		add_action( 'admin_menu', array( $this, 'add_child_theme_settings' ), 5 );
-	
+			
 	}
 
 	/** 
@@ -88,16 +85,6 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 			) );
 	}
 	
-	/**
-	 * Add the Theme Settings Page
-	 *
-	 * @since 1.0.0
-	 */
-	function add_child_theme_settings() {
-		global $_child_theme_settings;
-		$_child_theme_settings = new Child_Theme_Settings;	 	
-	}
-
 	/**
 	 * Register metaboxes on Child Theme Settings page
 	 *
@@ -130,3 +117,15 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	
 	
 }
+
+
+/**
+ * Add the Theme Settings Page
+ *
+ * @since 1.0.0
+ */
+function be_add_child_theme_settings() {
+	global $_child_theme_settings;
+	$_child_theme_settings = new Child_Theme_Settings;	 	
+}
+add_action( 'admin_menu', 'be_add_child_theme_settings', 5 );
