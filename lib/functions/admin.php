@@ -38,7 +38,7 @@ class Child_Admin_Settings extends Genesis_Admin_Boxes {
 		);
 		
 		// Give it a unique settings field. 
-		// You'll access them from get_option( 'option_name', CHILD_SETTINGS_FIELD );
+		// You'll access them from genesis_get_option( 'option_name', CHILD_SETTINGS_FIELD );
 		$settings_field = CHILD_SETTINGS_FIELD;
 		
 		// Set the default values
