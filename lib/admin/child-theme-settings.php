@@ -66,6 +66,9 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 
 		// Initialize the Sanitization Filter
 		add_action( 'genesis_settings_sanitizer_init', array( $this, 'sanitization_filters' ) );
+		
+		// Add the Admin Page
+		add_action( 'admin_menu', array( $this, 'add_child_theme_settings' ), 5 );
 	
 	}
 
@@ -83,6 +86,16 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 				'phone',
 				'address',
 			) );
+	}
+	
+	/**
+	 * Add the Theme Settings Page
+	 *
+	 * @since 1.0.0
+	 */
+	function add_child_theme_settings() {
+		global $_child_theme_settings;
+		$_child_theme_settings = new Child_Theme_Settings;	 	
 	}
 
 	/**
@@ -115,7 +128,5 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 		echo '<p><textarea name="' . $this->get_field_name( 'address' ) . '" cols="78" rows="8">' . esc_textarea( genesis_get_option( 'address', $this->settings_field ) ) . '</textarea></p>';		
 	}
 	
+	
 }
-
-// Make sure this matches the class you defined at the top
-new Child_Theme_Settings;
