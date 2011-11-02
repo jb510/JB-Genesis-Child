@@ -42,13 +42,13 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 			)
 		);
 		
-		// Set up page options.
+		// Set up page options. These are optional, so only uncomment if you want to change the defaults
 		$page_ops = array(
-			'screen_icon'       => 'options-general',
-			'save_button_text'  => 'Save Settings',
-			'reset_button_text' => 'Reset Settings',
-			'save_notice_text'  => 'Settings saved.',
-			'reset_notice_text' => 'Settings reset.', 'child-theme'
+		//	'screen_icon'       => 'options-general',
+		//	'save_button_text'  => 'Save Settings',
+		//	'reset_button_text' => 'Reset Settings',
+		//	'save_notice_text'  => 'Settings saved.',
+		//	'reset_notice_text' => 'Settings reset.',
 		);		
 		
 		// Give it a unique settings field. 
