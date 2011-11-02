@@ -40,7 +40,7 @@ function child_theme_setup() {
 	//genesis_unregister_layout( 'sidebar-content-sidebar' );
 		
 	// Setup Theme Settings
-	//include_once( CHILD_DIR . '/lib/functions/admin.php');
+	include_once( CHILD_DIR . '/lib/admin/child-theme-settings.php');
 	
 	// Don't update theme
 	add_filter( 'http_request_args', 'be_dont_update_theme', 5, 2 );
@@ -77,3 +77,8 @@ function be_dont_update_theme( $r, $url ) {
 }
 
 // ** Frontend Functions ** //
+
+add_action( 'genesis_before_loop', 'be_contact_info' );
+function be_contact_info(){
+	echo 'Phone: ' . genesis_get_option( 'phone', 'child-settings' );
+}
