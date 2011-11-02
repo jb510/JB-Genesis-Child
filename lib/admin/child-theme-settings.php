@@ -18,11 +18,14 @@
  *
  * @package BE Genesis Child
  * @subpackage Admin
+ * @since 1.0
  */
 class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	
 	/**
 	 * Create an admin menu item and settings page.
+	 * 
+	 * @since 1.0
 	 */
 	function __construct() {
 		
@@ -38,6 +41,15 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 			)
 		);
 		
+		// Set up page options.
+		$page_ops = array(
+			'screen_icon'       => 'options-general',
+			'save_button_text'  => 'Save Settings',
+			'reset_button_text' => 'Reset Settings',
+			'save_notice_text'  => 'Settings saved.',
+			'reset_notice_text' => 'Settings reset.', 'child-theme'
+		);		
+		
 		// Give it a unique settings field. 
 		// You'll access them from genesis_get_option( 'option_name', 'child-settings' );
 		$settings_field = 'child-settings';
@@ -48,18 +60,20 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 			'address' => '',
 		);
 		
+		// Create the Admin Page
+		$this->create( $page_id, $menu_ops, $page_ops, $settings_field, $default_settings );
+
 		// Initialize the Sanitization Filter
 		add_action( 'genesis_settings_sanitizer_init', array( $this, 'sanitization_filters' ) );
-		
-		// Create the Admin Page
-		$this->create( $page_id, $menu_ops, $page_ops = array(), $settings_field, $default_settings );
-			
+	
 	}
 
 	/** 
 	 * Set up Sanitization Filters
 	 *
 	 * See /lib/classes/sanitization.php for all available filters.
+	 *
+	 * @since 1.0
 	 */	
 	function sanitization_filters() {
 		
@@ -72,6 +86,9 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 
 	/**
 	 * Register metaboxes on Child Theme Settings page
+	 *
+	 * @since 1.0
+	 * @see Child_Theme_Settings::contact_information() Callback for contact information
 	 */
 	function metaboxes() {
 		
@@ -81,6 +98,9 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	
 	/**
 	 * Callback for Contact Information metabox
+	 *
+	 * @since 1.0
+	 * @see Child_Theme_Settings::metaboxes()
 	 */
 	function contact_information() {
 		
