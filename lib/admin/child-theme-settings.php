@@ -108,11 +108,11 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	function contact_information() {
 		
 		echo '<p>Phone:<br />';
-		echo '<input type="text" name="' . $this->get_field_name( 'phone' ) . '" id="' . $this->get_field_id( 'phone' ) . '" value="' . esc_attr( genesis_get_option( 'phone', $this->settings_field ) ) . '" size="50" />';
+		echo '<input type="text" name="' . $this->get_field_name( 'phone' ) . '" id="' . $this->get_field_id( 'phone' ) . '" value="' . $this->get_field_value( 'phone' ) . '" size="50" />';
 		echo '</p>';
 	
 		echo '<p>Address</p>';
-		echo '<p><textarea name="' . $this->get_field_name( 'address' ) . '" cols="78" rows="8">' . esc_textarea( genesis_get_option( 'address', $this->settings_field ) ) . '</textarea></p>';		
+		echo '<p><textarea name="' . $this->get_field_name( 'address' ) . '" cols="78" rows="8">' . $this->get_field_value( 'address' ) . '</textarea></p>';		
 	}
 	
 	
