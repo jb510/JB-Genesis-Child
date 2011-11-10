@@ -77,8 +77,3 @@ function be_dont_update_theme( $r, $url ) {
 }
 
 // ** Frontend Functions ** //
-
-add_action( 'genesis_before_loop', 'be_contact_info' );
-function be_contact_info(){
-	echo 'Phone: ' . genesis_get_option( 'phone', 'child-settings' );
-}
