@@ -1,6 +1,7 @@
 <?php
 /**
  * Child Theme Settings
+ * Requires Genesis 1.8 or later
  *
  * This file registers all of this child theme's specific Theme Settings, accessible from
  * Genesis > Child Theme Settings.
