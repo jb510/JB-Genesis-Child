@@ -38,6 +38,9 @@ function child_theme_setup() {
 	//genesis_unregister_layout( 'content-sidebar-sidebar' );
 	//genesis_unregister_layout( 'sidebar-sidebar-content' );
 	//genesis_unregister_layout( 'sidebar-content-sidebar' );
+	
+	// Editor Styles
+	add_editor_style( 'editor-style.css' );
 		
 	// Setup Theme Settings, if Genesis 1.8 or later
 	if ( version_compare( PARENT_THEME_VERSION, '1.7.9', '>' ) ) 
