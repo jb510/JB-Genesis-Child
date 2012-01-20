@@ -1,13 +1,15 @@
 /*
 	Theme Name: Your Website
-	Description: Child theme of Genesis, by <a href="http://www.billerickson.net/get-genesis">StudioPress</a>.
+	Description: Child theme of Genesis, by <a href="http://www.billerickson.net/go/genesis">StudioPress</a>.
 	Author: Bill Erickson
 	Author URI: http://www.billerickson.net
 	
 	Template: genesis
 */
 
-/* Stylesheet from Genesis 1.7 */
+/* Fonts
+------------------------------------------------------------ */
+
 
 /* Defaults
 ------------------------------------------------------------ */
@@ -99,18 +101,26 @@ body {
 #wrap {
 	background-color: #fff;
 	margin: 0 auto;
-	width: 960px;
+	max-width: 960px;
 }
 
+
+/** 
+// If full width site
+.wrap {
+	margin: 0 auto;
+	max-width: 960px;
+}
+
+*/
 
 /* Header
 ------------------------------------------------------------ */
 
 #header {
-	margin: 0 auto;
 	min-height: 80px;
 	overflow: hidden;
-	width: 960px;
+	width: 100%;
 }
 
 #title-area {
@@ -150,26 +160,14 @@ body {
 .header-image #title a {
 	display: block;
 	float: left;
-	height: 80px;
 	overflow: hidden;
 	padding: 0;
 	text-indent: -9999px;
-	width: 400px;
 }
 
 .header-image #description {
 	display: block;
 	overflow: hidden;
-}
-
-
-/* Image Header - Full Width
------------------------------------------------------------- */
-
-.header-full-width #title-area,
-.header-full-width #title,
-.header-full-width #title a {
-	width: 960px;
 }
 
 
@@ -316,10 +314,9 @@ li li a .sf-sub-indicator {
 	border-bottom: 1px solid #666;
 	clear: both;
 	color: #fff;
-	margin: 0 auto;
 	overflow: hidden;
 	text-transform: uppercase;
-	width: 960px;
+	width: 100%;
 }
 
 #nav ul {
@@ -437,10 +434,9 @@ li li a .sf-sub-indicator {
 	border-bottom: 1px solid #666;
 	clear: both;
 	color: #fff;
-	margin: 0 auto;
 	overflow: hidden;
 	text-transform: uppercase;
-	width: 960px;
+	width: 100%;
 }
 
 #subnav ul {
@@ -518,7 +514,7 @@ li li a .sf-sub-indicator {
 #inner {
 	margin: 20px auto;
 	overflow: hidden;
-	width: 960px;
+	max-width: 960px;
 }
 
 
@@ -547,13 +543,13 @@ li li a .sf-sub-indicator {
 
 #content-sidebar-wrap {
 	float: left;
-	width: 790px;
+	width: 82.291666%; /* 790/960 */
 }
 
 .content-sidebar #content-sidebar-wrap,
 .full-width-content #content-sidebar-wrap,
 .sidebar-content #content-sidebar-wrap {
-	width: 960px;
+	width: 100%;
 }
 
 .sidebar-content-sidebar #content-sidebar-wrap,
@@ -567,21 +563,16 @@ li li a .sf-sub-indicator {
 
 #content {
 	float: left;
-	width: 470px;
+	width: 59.49367%; /* 470/790 */
 }
 
-.content-sidebar #content,
-.sidebar-content #content {
-	width: 640px;
+.full-width-content #content {
+	width: 100%;
 }
 
 .sidebar-content #content,
 .sidebar-sidebar-content #content {
 	float: right;
-}
-
-.full-width-content #content {
-	width: 960px;
 }
 
 blockquote {
@@ -1000,7 +991,7 @@ p.wp-caption-text {
 	float: right;
 	font-size: 13px;
 	line-height: 20px;
-	width: 300px;
+	width: 31.25%; /* 300/960 */
 }
 
 .sidebar p {
@@ -1010,7 +1001,7 @@ p.wp-caption-text {
 
 #sidebar-alt {
 	float: left;
-	width: 150px;
+	width: 18.9873%; /* 150/790 */
 }
 
 .sidebar-content #sidebar,
@@ -1225,15 +1216,14 @@ div.gform_footer input.button:hover,
 	clear: both;
 	color: #fff;
 	font-size: 12px;
-	margin: 0 auto;
 	overflow: hidden;
 	padding: 10px 0 0;
-	width: 960px;
+	width: 100%;
 }
 
 #footer-widgets .wrap {
 	margin: 0 auto;
-	width: 940px;
+	max-width: 960px;
 }
 
 #footer-widgets .widget {
@@ -1303,11 +1293,10 @@ div.gform_footer input.button:hover,
 	background-color: #333;
 	clear: both;
 	font-size: 12px;
-	margin: 0 auto;
 	overflow: hidden;
 	padding: 6px 0 5px;
 	text-transform: uppercase;
-	width: 960px;
+	width: 100%;
 }
 
 #footer p {
@@ -1320,23 +1309,6 @@ div.gform_footer input.button:hover,
 	color: #fff;
 }
 
-#footer .gototop {
-	float: left;
-	padding: 0 0 0 5px;
-	width: 200px;
-}
-
-#footer .gototop a {
-	background: url(../genesis/images/footer-top.png) no-repeat center left;
-	padding: 2px 0 2px 18px;
-}
-
-#footer .creds {
-	float: right;
-	padding: 0 10px 0 0;
-	text-align: right;
-	width: 740px;
-}
 
 
 /* Comments
