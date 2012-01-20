@@ -87,6 +87,22 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	}
 	
 	/**
+	 * Set up Help Tab
+	 * @link http://wpdevel.wordpress.com/2011/12/06/help-and-screen-api-changes-in-3-3/
+	 *
+	 * @since 1.0.0
+	 */
+	 function help() {
+	 	$screen = get_current_screen();
+
+		$screen->add_help_tab( array(
+			'id'      => 'sample-help', 
+			'title'   => 'Sample Help',
+			'content' => '<p>Help content goes here.</p>',
+		) );
+	 }
+	
+	/**
 	 * Register metaboxes on Child Theme Settings page
 	 *
 	 * @since 1.0.0
@@ -120,6 +136,7 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 }
 
 
+add_action( 'genesis_admin_menu', 'be_add_child_theme_settings' );
 /**
  * Add the Theme Settings Page
  *
@@ -129,4 +146,3 @@ function be_add_child_theme_settings() {
 	global $_child_theme_settings;
 	$_child_theme_settings = new Child_Theme_Settings;	 	
 }
-add_action( 'admin_menu', 'be_add_child_theme_settings', 5 );
