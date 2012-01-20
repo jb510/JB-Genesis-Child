@@ -88,6 +88,7 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	
 	/**
 	 * Set up Help Tab
+	 * Genesis automatically looks for a help() function, and if provided uses it for the help tabs
 	 * @link http://wpdevel.wordpress.com/2011/12/06/help-and-screen-api-changes-in-3-3/
 	 *
 	 * @since 1.0.0
