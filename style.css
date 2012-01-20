@@ -1001,7 +1001,7 @@ p.wp-caption-text {
 
 #sidebar-alt {
 	float: left;
-	width: 18.9873%; /* 150/790 */
+	width: 15.625%; /* 150/960 */
 }
 
 .sidebar-content #sidebar,
@@ -1425,3 +1425,34 @@ div.gform_wrapper .gform_footer {
 	margin: 0;
 	padding: 0;
 }
+
+/* Smaller Screens
+------------------------------------------------------------ */
+
+/* Three column goes full width at 768 */
+@media only screen and (max-width: 768px) { 
+	.content-sidebar-sidebar #content-sidebar-wrap, 
+	.sidebar-content-sidebar #content-sidebar-wrap, 
+	.sidebar-sidebar-content #content-sidebar-wrap, 
+	.content-sidebar-sidebar #content, 
+	.sidebar-content-sidebar #content,  
+	.sidebar-sidebar-content #content, 
+	.content-sidebar-sidebar .sidebar, 
+	.sidebar-content-sidebar .sidebar, 
+	.sidebar-sidebar-content .sidebar, 
+	.content-sidebar-sidebar #sidebar-alt, 
+	.sidebar-content-sidebar #sidebar-alt, 
+	.sidebar-sidebar-content #sidebar-alt { 
+		width: 100%; 
+	}
+} 
+
+/* Two column goes full width at 480 */	
+@media only screen and (max-width: 480px) { 
+	.content-sidebar #content, 
+	.sidebar-content #content, 
+	.content-sidebar #sidebar, 
+	.sidebar-content #sidebar { 
+		width: 100%; 
+	} 
+} 
