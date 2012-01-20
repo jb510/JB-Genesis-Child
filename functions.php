@@ -26,6 +26,9 @@ function child_theme_setup() {
 	// Image Sizes
 	// add_image_size ('be_featured', 400, 100, true );
 	
+	// Menus
+	add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu' );
+	
 	// Sidebars
 	//unregister_sidebar('sidebar-alt');
 	//genesis_register_sidebar(array('name' => 'Blog Sidebar', 'id' => 'blog-sidebar'));
