@@ -42,9 +42,8 @@ function child_theme_setup() {
 	// Editor Styles
 	add_editor_style( 'editor-style.css' );
 		
-	// Setup Theme Settings, if Genesis 1.8 or later
-	if ( version_compare( PARENT_THEME_VERSION, '1.7.9', '>' ) ) 
-		include_once( CHILD_DIR . '/lib/admin/child-theme-settings.php');
+	// Setup Theme Settings
+	include_once( CHILD_DIR . '/lib/admin/child-theme-settings.php');
 	
 	// Don't update theme
 	add_filter( 'http_request_args', 'be_dont_update_theme', 5, 2 );
