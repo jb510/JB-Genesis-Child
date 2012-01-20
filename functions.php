@@ -55,6 +55,9 @@ function child_theme_setup() {
 	
 	// Remove Edit link
 	add_filter( 'genesis_edit_post_link', '__return_false' );
+	
+	// Remove Genesis Footer
+	remove_action( 'genesis_footer', 'genesis_do_footer' );
 }
 
 // ** Backend Functions ** //
