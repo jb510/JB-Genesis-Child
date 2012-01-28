@@ -58,8 +58,8 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 		
 		// Set the default values
 		$default_settings = array(
-			'phone'   => '',
-			'address' => '',
+			'footer_left'   => '',
+			'footer_right' => '',
 		);
 		
 		// Create the Admin Page
@@ -79,7 +79,7 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	 */	
 	function sanitization_filters() {
 		
-		genesis_add_option_filter( 'no_html', $this->settings_field,
+		genesis_add_option_filter( 'safe_html', $this->settings_field,
 			array(
 				'phone',
 				'address',
@@ -112,7 +112,7 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	 */
 	function metaboxes() {
 		
-		add_meta_box('contact-information', 'Contact Information', array( $this, 'contact_information' ), $this->pagehook, 'main', 'high');
+		add_meta_box('footer_metabox', 'Footer', array( $this, 'footer_metabox' ), $this->pagehook, 'main', 'high');
 		
 	}
 	
@@ -123,14 +123,13 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	 *
 	 * @see Child_Theme_Settings::metaboxes()
 	 */
-	function contact_information() {
+	function footer_metabox() {
 		
-		echo '<p>Phone:<br />';
-		echo '<input type="text" name="' . $this->get_field_name( 'phone' ) . '" id="' . $this->get_field_id( 'phone' ) . '" value="' . esc_attr( $this->get_field_value( 'phone' ) ) . '" size="50" />';
-		echo '</p>';
-	
-		echo '<p>Address</p>';
-		echo '<p><textarea name="' . $this->get_field_name( 'address' ) . '" cols="78" rows="8">' . esc_textarea( $this->get_field_value( 'address' ) ) . '</textarea></p>';		
+	echo '<p><strong>Footer Left:</strong></p>';
+	wp_editor( genesis_get_option( 'footer_left' ), $this->get_field_id( 'footer_left' ) );	
+
+	echo '<p><strong>Footer Right:</strong></p>';
+	wp_editor( genesis_get_option( 'footer_right' ), $this->get_field_id( 'footer_right' ) ); 
 	}
 	
 	
