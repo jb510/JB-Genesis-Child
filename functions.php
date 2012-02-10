@@ -42,6 +42,17 @@ function child_theme_setup() {
 	//genesis_unregister_layout( 'sidebar-sidebar-content' );
 	//genesis_unregister_layout( 'sidebar-content-sidebar' );
 	
+	// Remove Unused User Settings
+	add_filter( 'user_contactmethods', 'be_contactmethods' );
+	remove_action( 'show_user_profile', 'genesis_user_options_fields' );
+	remove_action( 'edit_user_profile', 'genesis_user_options_fields' );
+	remove_action( 'show_user_profile', 'genesis_user_archive_fields' );
+	remove_action( 'edit_user_profile', 'genesis_user_archive_fields' );
+	remove_action( 'show_user_profile', 'genesis_user_seo_fields' );
+	remove_action( 'edit_user_profile', 'genesis_user_seo_fields' );
+	remove_action( 'show_user_profile', 'genesis_user_layout_fields' );
+	remove_action( 'edit_user_profile', 'genesis_user_layout_fields' );
+
 	// Editor Styles
 	add_editor_style( 'editor-style.css' );
 		
@@ -61,6 +72,22 @@ function child_theme_setup() {
 }
 
 // ** Backend Functions ** //
+
+/**
+ * Customize Contact Methods
+ * @author Bill Erickson
+ * @link http://sillybean.net/2010/01/creating-a-user-directory-part-1-changing-user-contact-fields/
+ *
+ * @param array $contactmethods
+ * @return array
+ */
+function be_contactmethods( $contactmethods ) {
+	unset( $contactmethods['aim'] );
+	unset( $contactmethods['yim'] );
+	unset( $contactmethods['jabber'] );
+	
+	return $contactmethods;
+}
 
 /**
  * Don't Update Theme
