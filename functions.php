@@ -2,7 +2,9 @@
 /**
  * Functions
  *
- * @package      BE Genesis Child
+ * @package      BE_Genesis_Child
+ * @since        1.0.0
+ * @link         https://github.com/billerickson/BE-Genesis-Child
  * @author       Bill Erickson <bill@billerickson.net>
  * @copyright    Copyright (c) 2011, Bill Erickson
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
@@ -11,6 +13,7 @@
 
 /**
  * Theme Setup
+ * @since 1.0.0
  *
  * This setup function attaches all of the site-wide functions 
  * to the correct hooks and filters. All the functions themselves
@@ -78,6 +81,8 @@ function child_theme_setup() {
 
 /**
  * Remove Metaboxes
+ * @since 1.0.0
+ *
  * This removes unused or unneeded metaboxes from Genesis > Theme Settings. 
  * See /genesis/lib/admin/theme-settings for all metaboxes.
  *
@@ -94,6 +99,8 @@ function be_remove_metaboxes( $_genesis_theme_settings_pagehook ) {
 
 /**
  * Customize Contact Methods
+ * @since 1.0.0
+ *
  * @author Bill Erickson
  * @link http://sillybean.net/2010/01/creating-a-user-directory-part-1-changing-user-contact-fields/
  *
@@ -110,6 +117,8 @@ function be_contactmethods( $contactmethods ) {
 
 /**
  * Don't Update Theme
+ * @since 1.0.0
+ *
  * If there is a theme in the repo with the same name, 
  * this prevents WP from prompting an update.
  *

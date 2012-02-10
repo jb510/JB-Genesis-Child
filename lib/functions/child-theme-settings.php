@@ -1,12 +1,13 @@
 <?php
 /**
  * Child Theme Settings
- * Requires Genesis 1.8 or later
  *
  * This file registers all of this child theme's specific Theme Settings, accessible from
  * Genesis > Child Theme Settings.
  *
- * @package     BE Genesis Child
+ * @package     BE_Genesis_Child
+ * @since       1.0.0
+ * @link        https://github.com/billerickson/BE-Genesis-Child
  * @author      Bill Erickson <bill@billerickson.net>
  * @copyright   Copyright (c) 2011, Bill Erickson
  * @license     http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
@@ -17,16 +18,15 @@
  * Registers a new admin page, providing content and corresponding menu item
  * for the Child Theme Settings page.
  *
- * @package BE Genesis Child
- * @subpackage Admin
- *
  * @since 1.0.0
+ *
+ * @package BE_Genesis_Child
+ * @subpackage Child_Theme_Settings
  */
 class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	
 	/**
 	 * Create an admin menu item and settings page.
-	 * 
 	 * @since 1.0.0
 	 */
 	function __construct() {
@@ -72,10 +72,9 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 
 	/** 
 	 * Set up Sanitization Filters
+	 * @since 1.0.0
 	 *
 	 * See /lib/classes/sanitization.php for all available filters.
-	 *
-	 * @since 1.0.0
 	 */	
 	function sanitization_filters() {
 		
@@ -88,10 +87,10 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	
 	/**
 	 * Set up Help Tab
+	 * @since 1.0.0
+	 *
 	 * Genesis automatically looks for a help() function, and if provided uses it for the help tabs
 	 * @link http://wpdevel.wordpress.com/2011/12/06/help-and-screen-api-changes-in-3-3/
-	 *
-	 * @since 1.0.0
 	 */
 	 function help() {
 	 	$screen = get_current_screen();
@@ -105,10 +104,7 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	
 	/**
 	 * Register metaboxes on Child Theme Settings page
-	 *
 	 * @since 1.0.0
-	 *
-	 * @see Child_Theme_Settings::contact_information() Callback for contact information
 	 */
 	function metaboxes() {
 		
@@ -117,11 +113,8 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	}
 	
 	/**
-	 * Callback for Contact Information metabox
-	 *
+	 * Footer Metabox
 	 * @since 1.0.0
-	 *
-	 * @see Child_Theme_Settings::metaboxes()
 	 */
 	function footer_metabox() {
 		
@@ -139,7 +132,6 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 add_action( 'genesis_admin_menu', 'be_add_child_theme_settings' );
 /**
  * Add the Theme Settings Page
- *
  * @since 1.0.0
  */
 function be_add_child_theme_settings() {
