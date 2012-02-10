@@ -60,7 +60,7 @@ function child_theme_setup() {
 	add_editor_style( 'editor-style.css' );
 		
 	// Setup Theme Settings
-	include_once( CHILD_DIR . '/lib/functions/child-theme-settings.php');
+	//include_once( CHILD_DIR . '/lib/functions/child-theme-settings.php');
 	
 	// Don't update theme
 	add_filter( 'http_request_args', 'be_dont_update_theme', 5, 2 );
