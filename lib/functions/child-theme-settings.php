@@ -80,8 +80,8 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 		
 		genesis_add_option_filter( 'safe_html', $this->settings_field,
 			array(
-				'phone',
-				'address',
+				'footer_left',
+				'footer_right',
 			) );
 	}
 	
