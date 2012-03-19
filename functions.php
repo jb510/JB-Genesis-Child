@@ -4,11 +4,11 @@
  *
  * @package      BE_Genesis_Child
  * @since        1.0.0
- * @link         https://github.com/billerickson/BE-Genesis-Child
- * @author       Bill Erickson <bill@billerickson.net>
- * @copyright    Copyright (c) 2011, Bill Erickson
+ * @link         https://www.jbrownstudios.com
+ * @author       Jon Brown <jon@jbrownstudios.com>
+ * @copyright    Copyright (c) 2012, Jon Brown
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
- *
+ * @attribution	 Child theme based on the work of Bill Erickson https://github.com/billerickson/BE-Genesis-Child
  */
 
 /**
@@ -30,10 +30,10 @@ function child_theme_setup() {
 	// add_image_size ('be_featured', 400, 100, true );
 	
 	// Menus
-	add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu' ) );
+	add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu' , 'secondary' => 'Secondary Navigation Menu'  ) );
 	
 	// Sidebars
-	//unregister_sidebar('sidebar-alt');
+	unregister_sidebar('sidebar-alt');
 	//genesis_register_sidebar(array('name' => 'Blog Sidebar', 'id' => 'blog-sidebar'));
 	//add_theme_support( 'genesis-footer-widgets', 3 );
 
@@ -41,9 +41,9 @@ function child_theme_setup() {
 	//genesis_unregister_layout( 'full-width-content' );
 	//genesis_unregister_layout( 'content-sidebar' );	
 	//genesis_unregister_layout( 'sidebar-content' );
-	//genesis_unregister_layout( 'content-sidebar-sidebar' );
-	//genesis_unregister_layout( 'sidebar-sidebar-content' );
-	//genesis_unregister_layout( 'sidebar-content-sidebar' );
+	genesis_unregister_layout( 'content-sidebar-sidebar' );
+	genesis_unregister_layout( 'sidebar-sidebar-content' );
+	genesis_unregister_layout( 'sidebar-content-sidebar' );
 	
 	// Remove Unused Theme Settings
 	add_action( 'genesis_theme_settings_metaboxes', 'be_remove_metaboxes' );
@@ -59,6 +59,9 @@ function child_theme_setup() {
 	remove_action( 'show_user_profile', 'genesis_user_layout_fields' );
 	remove_action( 'edit_user_profile', 'genesis_user_layout_fields' );
 
+	// Remove Genesis Widgets
+	add_action( 'widgets_init', 'be_remove_genesis_widgets', 20 );
+	
 	// Editor Styles
 	add_editor_style( 'editor-style.css' );
 		
@@ -92,10 +95,29 @@ function child_theme_setup() {
  
 function be_remove_metaboxes( $_genesis_theme_settings_pagehook ) {
 	remove_meta_box( 'genesis-theme-settings-header', $_genesis_theme_settings_pagehook, 'main' );
-	remove_meta_box( 'genesis-theme-settings-nav', $_genesis_theme_settings_pagehook, 'main' );
+	//remove_meta_box( 'genesis-theme-settings-nav', $_genesis_theme_settings_pagehook, 'main' );
 	remove_meta_box( 'genesis-theme-settings-breadcrumb', $_genesis_theme_settings_pagehook, 'main' );
 	remove_meta_box( 'genesis-theme-settings-blogpage', $_genesis_theme_settings_pagehook, 'main' );
 }
+
+/**
+ * Remove Widgets
+ * @since 1.0.?
+ *
+ * This removes unused or unneeded widgets from Genesis. 
+ *
+ */
+function be_remove_genesis_widgets() {
+	//unregister_widget( 'Genesis_Featured_Post' );
+	//unregister_widget( 'Genesis_Featured_Page' );
+    unregister_widget( 'Genesis_eNews_Updates' );
+    unregister_widget( 'Genesis_User_Profile_Widget' );
+    unregister_widget( 'Genesis_Menu_Pages_Widget' );
+    unregister_widget( 'Genesis_Widget_Menu_Categories' );
+    unregister_widget( 'Genesis_Latest_Tweets_Widget' );
+}
+
+
 
 /**
  * Customize Contact Methods
