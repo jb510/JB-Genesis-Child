@@ -119,10 +119,10 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	function footer_metabox() {
 		
 	echo '<p><strong>Footer Left:</strong></p>';
-	wp_editor( $this->get_field_value( 'footer-left' ), $this->get_field_id( 'footer-left' ) );	
+	wp_editor( $this->get_field_value( 'footer-left' ), $this->get_field_id( 'footer-left' ), array( 'textarea_rows' => 5 ) );	
 
 	echo '<p><strong>Footer Right:</strong></p>';
-	wp_editor( $this->get_field_value( 'footer-right' ), $this->get_field_id( 'footer-right' ) ); 
+	wp_editor( $this->get_field_value( 'footer-right' ), $this->get_field_id( 'footer-right' ), array( 'textarea_rows' => 5 ) ); 
 	}
 	
 	
