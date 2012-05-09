@@ -35,7 +35,7 @@ function child_theme_setup() {
 	// Sidebars
 	//unregister_sidebar( 'sidebar-alt' );
 	//genesis_register_sidebar( array( 'name' => 'Blog Sidebar', 'id' => 'blog-sidebar' ) );
-	//add_theme_support( 'genesis-footer-widgets', 3 );
+	//add_theme_support( 'genesis-footer-widgets', 4 );
 
 	// Remove Unused Page Layouts
 	//genesis_unregister_layout( 'full-width-content' );
@@ -60,7 +60,7 @@ function child_theme_setup() {
 	add_editor_style( 'editor-style.css' );
 		
 	// Setup Theme Settings
-	//include_once( CHILD_DIR . '/lib/functions/child-theme-settings.php' );
+	include_once( CHILD_DIR . '/lib/functions/child-theme-settings.php' );
 	
 	// Don't update theme
 	add_filter( 'http_request_args', 'be_dont_update_theme', 5, 2 );
@@ -69,6 +69,9 @@ function child_theme_setup() {
 	
 	// Remove Edit link
 	add_filter( 'genesis_edit_post_link', '__return_false' );
+	
+	// Responsive Meta Tag
+	add_action( 'genesis_meta', 'be_viewport_meta_tag' );
 	
 	// Footer
 	remove_action( 'genesis_footer', 'genesis_do_footer' );
@@ -121,6 +124,16 @@ function be_dont_update_theme( $r, $url ) {
 }
 
 // ** Frontend Functions ** //
+
+/**
+ * Viewport Meta Tag for Mobile Browsers
+ *
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/code/responsive-meta-tag
+ */
+function be_viewport_meta_tag() {
+	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
+}
 
 /**
  * Footer 
