@@ -27,14 +27,14 @@ function child_theme_setup() {
 	// ** Backend **	
 	
 	// Image Sizes
-	// add_image_size ('be_featured', 400, 100, true );
+	// add_image_size( 'be_featured', 400, 100, true );
 	
 	// Menus
 	add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu' ) );
 	
 	// Sidebars
-	//unregister_sidebar('sidebar-alt');
-	//genesis_register_sidebar(array('name' => 'Blog Sidebar', 'id' => 'blog-sidebar'));
+	//unregister_sidebar( 'sidebar-alt' );
+	//genesis_register_sidebar( array( 'name' => 'Blog Sidebar', 'id' => 'blog-sidebar' ) );
 	//add_theme_support( 'genesis-footer-widgets', 3 );
 
 	// Remove Unused Page Layouts
@@ -63,7 +63,7 @@ function child_theme_setup() {
 	add_editor_style( 'editor-style.css' );
 		
 	// Setup Theme Settings
-	//include_once( CHILD_DIR . '/lib/functions/child-theme-settings.php');
+	//include_once( CHILD_DIR . '/lib/functions/child-theme-settings.php' );
 	
 	// Don't update theme
 	add_filter( 'http_request_args', 'be_dont_update_theme', 5, 2 );
