@@ -45,9 +45,6 @@ function child_theme_setup() {
 	//genesis_unregister_layout( 'sidebar-sidebar-content' );
 	//genesis_unregister_layout( 'sidebar-content-sidebar' );
 	
-	// Remove Unused Theme Settings
-	add_action( 'genesis_theme_settings_metaboxes', 'be_remove_metaboxes' );
-	
 	// Remove Unused User Settings
 	add_filter( 'user_contactmethods', 'be_contactmethods' );
 	remove_action( 'show_user_profile', 'genesis_user_options_fields' );
@@ -79,24 +76,6 @@ function child_theme_setup() {
 }
 
 // ** Backend Functions ** //
-
-/**
- * Remove Metaboxes
- * @since 1.0.0
- *
- * This removes unused or unneeded metaboxes from Genesis > Theme Settings. 
- * See /genesis/lib/admin/theme-settings for all metaboxes.
- *
- * @author Bill Erickson
- * @link http://www.billerickson.net/code/remove-metaboxes-from-genesis-theme-settings/
- */
- 
-function be_remove_metaboxes( $_genesis_theme_settings_pagehook ) {
-	remove_meta_box( 'genesis-theme-settings-header', $_genesis_theme_settings_pagehook, 'main' );
-	remove_meta_box( 'genesis-theme-settings-nav', $_genesis_theme_settings_pagehook, 'main' );
-	remove_meta_box( 'genesis-theme-settings-breadcrumb', $_genesis_theme_settings_pagehook, 'main' );
-	remove_meta_box( 'genesis-theme-settings-blogpage', $_genesis_theme_settings_pagehook, 'main' );
-}
 
 /**
  * Customize Contact Methods
