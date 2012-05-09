@@ -73,8 +73,9 @@ function child_theme_setup() {
 	// Remove Edit link
 	add_filter( 'genesis_edit_post_link', '__return_false' );
 	
-	// Remove Genesis Footer
+	// Footer
 	remove_action( 'genesis_footer', 'genesis_do_footer' );
+	add_action( 'genesis_footer', 'be_footer' );
 }
 
 // ** Backend Functions ** //
@@ -141,3 +142,12 @@ function be_dont_update_theme( $r, $url ) {
 }
 
 // ** Frontend Functions ** //
+
+/**
+ * Footer 
+ *
+ */
+function be_footer() {
+	echo '<div class="one-half first" id="footer-left">' . wpautop( genesis_get_option( 'footer-left', 'child-settings' ) ) . '</div>';
+	echo '<div class="one-half" id="footer-right">' . wpautop( genesis_get_option( 'footer-right', 'child-settings' ) ) . '</div>';
+}
