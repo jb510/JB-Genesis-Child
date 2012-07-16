@@ -58,8 +58,8 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 		
 		// Set the default values
 		$default_settings = array(
-			'footer_left'   => '',
-			'footer_right' => '',
+			'footer-left'   => 'Copyright &copy; ' . date( 'Y' ) . ' All Rights Reserved',
+			'footer-right' => 'Site by <a href="http://www.billerickson.net">Bill Erickson</a>',
 		);
 		
 		// Create the Admin Page
@@ -80,8 +80,8 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 		
 		genesis_add_option_filter( 'safe_html', $this->settings_field,
 			array(
-				'phone',
-				'address',
+				'footer-left',
+				'footer-right',
 			) );
 	}
 	
@@ -119,17 +119,15 @@ class Child_Theme_Settings extends Genesis_Admin_Boxes {
 	function footer_metabox() {
 		
 	echo '<p><strong>Footer Left:</strong></p>';
-	wp_editor( genesis_get_option( 'footer_left', 'child-settings' ), $this->get_field_id( 'footer_left' ) );	
+	wp_editor( $this->get_field_value( 'footer-left' ), $this->get_field_id( 'footer-left' ), array( 'textarea_rows' => 5 ) );	
 
 	echo '<p><strong>Footer Right:</strong></p>';
-	wp_editor( genesis_get_option( 'footer_right', 'child-settings' ), $this->get_field_id( 'footer_right' ) ); 
+	wp_editor( $this->get_field_value( 'footer-right' ), $this->get_field_id( 'footer-right' ), array( 'textarea_rows' => 5 ) ); 
 	}
 	
 	
 }
 
-
-add_action( 'genesis_admin_menu', 'be_add_child_theme_settings' );
 /**
  * Add the Theme Settings Page
  * @since 1.0.0
@@ -138,3 +136,4 @@ function be_add_child_theme_settings() {
 	global $_child_theme_settings;
 	$_child_theme_settings = new Child_Theme_Settings;	 	
 }
+add_action( 'genesis_admin_menu', 'be_add_child_theme_settings' );

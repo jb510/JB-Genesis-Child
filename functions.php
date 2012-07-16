@@ -27,10 +27,10 @@ function child_theme_setup() {
 	// ** Backend **	
 	
 	// Image Sizes
-	// add_image_size ('be_featured', 400, 100, true );
+	// add_image_size( 'be_featured', 400, 100, true );
 	
 	// Menus
-	add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu' , 'secondary' => 'Secondary Navigation Menu'  ) );
+	add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu' ) );
 	
 	// Sidebars
 	unregister_sidebar('sidebar-alt');
@@ -45,9 +45,6 @@ function child_theme_setup() {
 	genesis_unregister_layout( 'sidebar-sidebar-content' );
 	genesis_unregister_layout( 'sidebar-content-sidebar' );
 	
-	// Remove Unused Theme Settings
-	add_action( 'genesis_theme_settings_metaboxes', 'be_remove_metaboxes' );
-	
 	// Remove Unused User Settings
 	add_filter( 'user_contactmethods', 'be_contactmethods' );
 	remove_action( 'show_user_profile', 'genesis_user_options_fields' );
@@ -59,14 +56,11 @@ function child_theme_setup() {
 	remove_action( 'show_user_profile', 'genesis_user_layout_fields' );
 	remove_action( 'edit_user_profile', 'genesis_user_layout_fields' );
 
-	// Remove Genesis Widgets
-	add_action( 'widgets_init', 'be_remove_genesis_widgets', 20 );
-	
 	// Editor Styles
 	add_editor_style( 'editor-style.css' );
 		
 	// Setup Theme Settings
-	//include_once( CHILD_DIR . '/lib/functions/child-theme-settings.php');
+	include_once( CHILD_DIR . '/lib/functions/child-theme-settings.php' );
 	
 	// Don't update theme
 	add_filter( 'http_request_args', 'be_dont_update_theme', 5, 2 );
@@ -76,48 +70,15 @@ function child_theme_setup() {
 	// Remove Edit link
 	add_filter( 'genesis_edit_post_link', '__return_false' );
 	
-	// Remove Genesis Footer
+	// Responsive Meta Tag
+	add_action( 'genesis_meta', 'be_viewport_meta_tag' );
+	
+	// Footer
 	remove_action( 'genesis_footer', 'genesis_do_footer' );
+	add_action( 'genesis_footer', 'be_footer' );
 }
 
 // ** Backend Functions ** //
-
-/**
- * Remove Metaboxes
- * @since 1.0.0
- *
- * This removes unused or unneeded metaboxes from Genesis > Theme Settings. 
- * See /genesis/lib/admin/theme-settings for all metaboxes.
- *
- * @author Bill Erickson
- * @link http://www.billerickson.net/code/remove-metaboxes-from-genesis-theme-settings/
- */
- 
-function be_remove_metaboxes( $_genesis_theme_settings_pagehook ) {
-	remove_meta_box( 'genesis-theme-settings-header', $_genesis_theme_settings_pagehook, 'main' );
-	//remove_meta_box( 'genesis-theme-settings-nav', $_genesis_theme_settings_pagehook, 'main' );
-	remove_meta_box( 'genesis-theme-settings-breadcrumb', $_genesis_theme_settings_pagehook, 'main' );
-	remove_meta_box( 'genesis-theme-settings-blogpage', $_genesis_theme_settings_pagehook, 'main' );
-}
-
-/**
- * Remove Widgets
- * @since 1.0.?
- *
- * This removes unused or unneeded widgets from Genesis. 
- *
- */
-function be_remove_genesis_widgets() {
-	//unregister_widget( 'Genesis_Featured_Post' );
-	//unregister_widget( 'Genesis_Featured_Page' );
-    unregister_widget( 'Genesis_eNews_Updates' );
-    unregister_widget( 'Genesis_User_Profile_Widget' );
-    unregister_widget( 'Genesis_Menu_Pages_Widget' );
-    unregister_widget( 'Genesis_Widget_Menu_Categories' );
-    unregister_widget( 'Genesis_Latest_Tweets_Widget' );
-}
-
-
 
 /**
  * Customize Contact Methods
@@ -163,3 +124,22 @@ function be_dont_update_theme( $r, $url ) {
 }
 
 // ** Frontend Functions ** //
+
+/**
+ * Viewport Meta Tag for Mobile Browsers
+ *
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/code/responsive-meta-tag
+ */
+function be_viewport_meta_tag() {
+	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
+}
+
+/**
+ * Footer 
+ *
+ */
+function be_footer() {
+	echo '<div class="one-half first" id="footer-left">' . wpautop( genesis_get_option( 'footer-left', 'child-settings' ) ) . '</div>';
+	echo '<div class="one-half" id="footer-right">' . wpautop( genesis_get_option( 'footer-right', 'child-settings' ) ) . '</div>';
+}
