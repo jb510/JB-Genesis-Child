@@ -1306,37 +1306,6 @@ div.gform_footer input.button:hover,
 }
 
 
-/* Gravity Forms
------------------------------------------------------------- */
-
-div.gform_wrapper input,
-div.gform_wrapper select,
-div.gform_wrapper textarea {
-	color: #333;
-	font-family: Arial, Helvetica, Tahoma, sans-serif;
-	font-size: 12px !important;
-	padding: 4px 5px !important;
-}
-
-div.gform_footer input.button {
-	color: #fff;
-}
-
-div.gform_wrapper .ginput_complex label {
-	font-size: 12px;
-}
-
-div.gform_wrapper li,
-div.gform_wrapper form li {
-	margin: 0 0 10px;
-}
-
-div.gform_wrapper .gform_footer {
-	border: none;
-	margin: 0;
-	padding: 0;
-}
-
 /* Smaller Screens
 ------------------------------------------------------------ */
 
