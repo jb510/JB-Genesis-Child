@@ -2,10 +2,11 @@
 /**
  * Functions
  *
- * @package      BE_Genesis_Child
+ * @package      JB_Genesis_Child
  * @since        1.0.0
  * @link         https://www.jbrownstudios.com
- * @author       Jon Brown <jon@jbrownstudios.com>
+ * @author       Jon Brown <jon@9seeds.com>
+ * @attribution  Bill Erickson <bill@billerickson.net>
  * @copyright    Copyright (c) 2012, Jon Brown
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @attribution	 Child theme based on the work of Bill Erickson https://github.com/billerickson/BE-Genesis-Child

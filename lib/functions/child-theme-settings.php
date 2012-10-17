@@ -5,11 +5,12 @@
  * This file registers all of this child theme's specific Theme Settings, accessible from
  * Genesis > Child Theme Settings.
  *
- * @package     BE_Genesis_Child
+ * @package     JB_Genesis_Child
  * @since       1.0.0
  * @link        https://github.com/billerickson/BE-Genesis-Child
- * @author      Bill Erickson <bill@billerickson.net>
- * @copyright   Copyright (c) 2011, Bill Erickson
+ * @author      Jon Brown <jon@9seeds.com>
+ * @attribution Bill Erickson <bill@billerickson.net>
+ * @copyright   Copyright (c) 2012, Jon Brown
  * @license     http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link        https://github.com/billerickson/BE-Genesis-Child
  */ 
@@ -20,7 +21,7 @@
  *
  * @since 1.0.0
  *
- * @package BE_Genesis_Child
+ * @package JB_Genesis_Child
  * @subpackage Child_Theme_Settings
  */
 class Child_Theme_Settings extends Genesis_Admin_Boxes {
