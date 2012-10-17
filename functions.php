@@ -29,6 +29,9 @@ function child_theme_setup() {
 	// Image Sizes
 	// add_image_size( 'be_featured', 400, 100, true );
 	
+	// Structural Wraps
+	add_theme_support( 'genesis-structural-wraps', array( 'header', 'nav', 'subnav', 'footer-widgets', 'footer' ) );
+	
 	// Menus
 	add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu' ) );
 	
