@@ -595,27 +595,18 @@ h3,
 h4,
 h5,
 h6 {
+	line-height: 1.25em;
 	margin: 0 0 5px;
 }
 
-h1,
+h1 {
+	font-size: 28px;
+}
+
 h2,
 h2 a,
 h2 a:visited {
 	font-size: 24px;
-	line-height: 30px;
-}
-
-.taxonomy-description h1,
-.widget-area h2 a {
-	font-size: 14px;
-	font-weight: bold;
-	line-height: 20px;
-}
-
-h2 a:hover {
-	color: #25a;
-	text-decoration: none;
 }
 
 h3 {
