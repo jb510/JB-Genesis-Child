@@ -205,12 +205,10 @@ li a .sf-sub-indicator {
 /* Header Right Navigation
 ------------------------------------------------------------ */
 
-#header ul.nav,
 #header ul.menu {
 	float: right;
 }
 
-#header ul.nav ul,
 #header ul.menu ul {
 	float: right;
 	margin: 0;
@@ -218,7 +216,6 @@ li a .sf-sub-indicator {
 	width: 100%;
 }
 
-#header ul.nav li,
 #header ul.menu li {
 	background-color: #333;
 	float: left;
@@ -226,7 +223,6 @@ li a .sf-sub-indicator {
 	text-transform: uppercase;
 }
 
-#header ul.nav li a,
 #header ul.menu li a {
 	color: #fff;
 	display: block;
@@ -236,11 +232,6 @@ li a .sf-sub-indicator {
 	text-decoration: none;
 }
 
-#header ul.nav li a:hover,
-#header ul.nav li a:active,
-#header ul.nav .current_page_item a,
-#header ul.nav .current-cat a,
-#header ul.nav .current-menu-item a,
 #header ul.menu li a:hover,
 #header ul.menu li a:active,
 #header ul.menu .current_page_item a,
@@ -250,9 +241,6 @@ li a .sf-sub-indicator {
 	color: #fff;
 }
 
-#header ul.nav li li a,
-#header ul.nav li li a:link,
-#header ul.nav li li a:visited,
 #header ul.menu li li a,
 #header ul.menu li li a:link,
 #header ul.menu li li a:visited {
@@ -267,14 +255,11 @@ li a .sf-sub-indicator {
 	width: 138px;
 }
 
-#header ul.nav li li a:hover,
-#header ul.nav li li a:active,
 #header ul.menu li li a:hover,
 #header ul.menu li li a:active {
 	background-color: #000;
 }
 
-#header ul.nav li ul,
 #header ul.menu li ul {
 	height: auto;
 	left: -9999px;
@@ -283,18 +268,14 @@ li a .sf-sub-indicator {
 	z-index: 9999;
 }
 
-#header ul.nav li ul a,
 #header ul.menu li ul a {
 	width: 140px;
 }
 
-#header ul.nav li ul ul,
 #header ul.menu li ul ul {
 	margin: -33px 0 0 159px;
 }
 
-#header ul.nav li:hover>ul,
-#header ul.nav li.sfHover ul,
 #header ul.menu li:hover>ul,
 #header ul.menu li.sfHover ul {
 	left: auto;
