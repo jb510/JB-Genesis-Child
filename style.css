@@ -365,44 +365,6 @@ li a .sf-sub-indicator {
 }
 
 
-/* Primary Navigation Extras
------------------------------------------------------------- */
-
-#nav li.right {
-	float: right;
-	font-size: 13px;
-	padding: 6px 10px 5px;
-}
-
-#nav li.right a {
-	background: none;
-	border: none;
-	color: #fff;
-	display: inline;
-	text-decoration: none;
-}
-
-#nav li.right a:hover {
-	color: #fff;
-	text-decoration: underline;
-}
-
-#nav li.search {
-	padding: 0 10px;
-}
-
-#nav li.rss a {
-	background: url(../genesis/images/rss.png) no-repeat center left;
-	margin: 0 0 0 10px;
-	padding: 7px 0 5px 16px;
-}
-
-#nav li.twitter a {
-	background: url(../genesis/images/twitter-nav.png) no-repeat center left;
-	padding: 7px 0 5px 20px;
-}
-
-
 /* Secondary Navigation
 ------------------------------------------------------------ */
 
