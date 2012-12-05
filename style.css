@@ -495,9 +495,13 @@ p.subscribe-to-comments {
 	clear: both;
 }
 
+hr,
 .clear-line {
+	background: transparent;
+	border: none;
 	border-bottom: 1px solid #ddd;
-	clear: both;
+	overflow: hidden;
+	width: 100%;
 	margin: 0 0 15px;
 }
 
