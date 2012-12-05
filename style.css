@@ -513,26 +513,6 @@ li a .sf-sub-indicator {
 }
 
 
-/* Content-Sidebar Wrap
------------------------------------------------------------- */
-
-#content-sidebar-wrap {
-	float: left;
-	width: 82.291666%; /* 790/960 */
-}
-
-.content-sidebar #content-sidebar-wrap,
-.full-width-content #content-sidebar-wrap,
-.sidebar-content #content-sidebar-wrap {
-	width: 100%;
-}
-
-.sidebar-content-sidebar #content-sidebar-wrap,
-.sidebar-sidebar-content #content-sidebar-wrap {
-	float: right;
-}
-
-
 /* Content
 ------------------------------------------------------------ */
 
@@ -545,8 +525,7 @@ li a .sf-sub-indicator {
 	width: 100%;
 }
 
-.sidebar-content #content,
-.sidebar-sidebar-content #content {
+.sidebar-content #content {
 	float: right;
 }
 
@@ -953,18 +932,8 @@ p.wp-caption-text {
 	line-height: 20px;
 }
 
-#sidebar-alt {
+.sidebar-content #sidebar {
 	float: left;
-	width: 15.625%; /* 150/960 */
-}
-
-.sidebar-content #sidebar,
-.sidebar-sidebar-content #sidebar {
-	float: left;
-}
-
-.content-sidebar-sidebar #sidebar-alt {
-	float: right;
 }
 
 .sidebar .widget {
@@ -1291,23 +1260,6 @@ div.gform_footer input.button:hover,
 
 /* Smaller Screens
 ------------------------------------------------------------ */
-
-@media only screen and (max-width: 768px) { 
-	.content-sidebar-sidebar #content-sidebar-wrap, 
-	.sidebar-content-sidebar #content-sidebar-wrap, 
-	.sidebar-sidebar-content #content-sidebar-wrap, 
-	.content-sidebar-sidebar #content, 
-	.sidebar-content-sidebar #content,  
-	.sidebar-sidebar-content #content, 
-	.content-sidebar-sidebar .sidebar, 
-	.sidebar-content-sidebar .sidebar, 
-	.sidebar-sidebar-content .sidebar, 
-	.content-sidebar-sidebar #sidebar-alt, 
-	.sidebar-content-sidebar #sidebar-alt, 
-	.sidebar-sidebar-content #sidebar-alt { 
-		width: 100%; 
-	}
-} 
 
 @media only screen and (max-width: 480px) { 
 	.content-sidebar #content, 
