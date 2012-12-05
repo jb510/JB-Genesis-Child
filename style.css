@@ -525,8 +525,11 @@ hr,
 .two-sixths,
 .two-thirds {
 	float: left;
-	margin: 0 0 20px;
-	padding-left: 3%;
+	margin-left: 3%;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .one-half,
@@ -579,7 +582,7 @@ hr,
 
 .first {
 	clear: both;
-	padding-left: 0;
+	margin-left: 0;
 }
 
 
