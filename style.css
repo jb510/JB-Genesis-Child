@@ -937,14 +937,8 @@ p.wp-caption-text {
 }
 
 .sidebar .widget {
-	background-color: #fff;
-	border: 1px solid #ddd;
 	margin: 0 0 15px;
 	padding: 0 0 10px;
-}
-
-.widget-area .textwidget {
-	padding: 5px 10px 0;
 }
 
 .widget-area ol,
@@ -960,71 +954,6 @@ p.wp-caption-text {
 .widget-area ul li {
 	list-style-type: square;
 	word-wrap: break-word;
-}
-
-
-/* Tag Cloud
------------------------------------------------------------- */
-
-.widget_tag_cloud div div {
-	padding: 5px 10px 0;
-}
-
-
-/* Dropdowns
------------------------------------------------------------- */
-
-#cat,
-.widget_archive select {
-	display: inline;
-	font-size: 12px;
-	margin: 10px 10px 0;
-	padding: 3px;
-	width: 278px;
-}
-
-#sidebar-alt #cat,
-#sidebar-alt .widget_archive select {
-	width: 128px;
-}
-
-
-/* Featured Page / Post
------------------------------------------------------------- */
-
-.featuredpage,
-.featuredpost {
-	clear: both;
-	margin: 0 0 15px;
-	overflow: hidden;
-}
-
-.featuredpage .page,
-.featuredpost .post {
-	border-bottom: 1px solid #ddd;
-	margin: 0 0 5px;
-	overflow: hidden;
-	padding: 5px 10px 10px;
-}
-
-.more-from-category {
-	padding: 5px 10px 0;
-}
-
-
-/* User Profile
------------------------------------------------------------- */
-
-.user-profile {
-	overflow: hidden;
-}
-
-.user-profile p {
-	padding: 10px 10px 0;
-}
-
-.user-profile .posts_link {
-	padding: 0 10px;
 }
 
 
@@ -1063,70 +992,11 @@ div.gform_footer input.button:hover,
 /* Search Form
 ------------------------------------------------------------ */
 
-#header .searchform {
-	float: right;
-	padding: 30px 0 0;
-}
-
-.sidebar .searchform {
-	padding: 5px 0 0 10px;
-}
-
-#nav .searchform {
-	float: right;
-}
-
 .s {
 	font-size: 12px;
 	margin: 5px 2px 0 0;
 	padding: 4px 5px;
 	width: 195px;
-}
-
-
-/* eNews and Update Widget
------------------------------------------------------------- */
-
-.enews p {
-	padding: 5px 10px 0;
-}
-
-.enews #subscribe {
-	padding: 0 0 0 10px;
-}
-
-.enews #subbox {
-	font-size: 12px;
-	margin: 5px 5px 0 0;
-	padding: 4px 5px;
-	width: 225px;
-}
-
-
-/* Calendar Widget
------------------------------------------------------------- */
-
-#wp-calendar {
-	width: 100%;
-}
-
-#wp-calendar caption {
-	font-size: 12px;
-	font-style: italic;
-	padding: 2px 5px 0 0;
-	text-align: right;
-}
-
-#wp-calendar thead {
-	background-color: #f5f5f5;
-	font-weight: bold;
-	margin: 10px 0 0;
-}
-
-#wp-calendar td {
-	background-color: #f5f5f5;
-	padding: 2px;
-	text-align: center;
 }
 
 
