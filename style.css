@@ -488,9 +488,8 @@ li a .sf-sub-indicator {
 ------------------------------------------------------------ */
 
 #inner {
-	margin: 20px auto;
 	overflow: hidden;
-	max-width: 960px;
+	width: 100%;
 }
 
 
