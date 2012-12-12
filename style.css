@@ -812,7 +812,7 @@ p.wp-caption-text {
 ------------------------------------------------------------ */
 
 .sidebar {
-	display: inline;
+	display: block;
 	float: right;
 	font-size: 13px;
 	line-height: 20px;
