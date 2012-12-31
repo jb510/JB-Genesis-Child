@@ -37,9 +37,9 @@ function child_theme_setup() {
 	add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu' ) );
 	
 	// Sidebars
-	unregister_sidebar('sidebar-alt');
-	//genesis_register_sidebar(array('name' => 'Blog Sidebar', 'id' => 'blog-sidebar'));
-	//add_theme_support( 'genesis-footer-widgets', 3 );
+	unregister_sidebar( 'sidebar-alt' );
+	//genesis_register_sidebar( array( 'name' => 'Blog Sidebar', 'id' => 'blog-sidebar' ) );
+	//add_theme_support( 'genesis-footer-widgets', 4 );
 
 	// Remove Unused Page Layouts
 	//genesis_unregister_layout( 'full-width-content' );
